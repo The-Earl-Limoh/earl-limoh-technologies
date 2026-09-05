@@ -423,7 +423,7 @@ footer {
    PHONE
 ========================= */
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
 
     .top-section {
         display: flex;
@@ -582,7 +582,7 @@ footer {
    VERY SMALL PHONES
 ========================= */
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
 
     .logo {
         width: 175px;
