@@ -424,88 +424,26 @@ footer {
    TABLET
 ========================================================= */
 
-@media (max-width: 1100px) {
-
-    .top-section {
-        grid-template-columns: 180px minmax(0, 1fr) 160px;
-
-        padding: 20px 3%;
-    }
-
-    .logo {
-        width: 200px;
-
-        max-height: 130px;
-    }
-
-    .logo-container {
-        width: 180px;
-
-        /*
-           KEEP LOGO AT SAME VERTICAL LEVEL
-        */
-        top: -150px;
-    }
-
-    .logo-caption {
-        max-width: 200px;
-
-        font-size: 12px;
-    }
-
-    .landing {
-        /*
-           KEEP NAVIGATION POSITION
-        */
-        top: -100px;
-
-        gap: 20px;
-
-        font-size: 17px;
-    }
-
-    .landing a {
-        font-size: 17px;
-    }
-
-    .ceo {
-        width: 160px;
-    }
-
-    .profile-pic {
-        width: 85px;
-        height: 85px;
-    }
-
-    .footer-content {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-
-        gap: 30px;
-
-        margin-left: 3%;
-        margin-right: 3%;
-    }
-}
-
-
-/* =========================================================
-   PHONE
-========================================================= */
-
 @media (max-width: 600px) {
 
-    .top-section {
-        display: flex;
+    /* =====================================================
+       TOP SECTION - 3 COLUMNS ON PHONE
+    ===================================================== */
 
-        flex-direction: column;
+    .top-section {
+        display: grid;
+
+        grid-template-columns: 1fr 1.5fr 1fr;
 
         align-items: center;
 
-        justify-content: center;
+        gap: 5px;
 
         width: 100%;
 
-        padding: 15px 5%;
+        padding: 10px 2%;
+
+        box-sizing: border-box;
     }
 
 
@@ -514,45 +452,70 @@ footer {
     ===================================================== */
 
     .logo-container {
-        order: 1;
+        grid-column: 1;
 
         width: 100%;
 
-        align-items: center;
+        position: relative;
 
-        justify-content: center;
+        top: 0;
 
-        margin: 0;
+        justify-self: center;
+
+        align-self: center;
 
         text-align: center;
 
-        /*
-           Remove desktop vertical movement on phone
-        */
-        top: 0;
+        margin: 0;
+
+        display: block;
+    }
+
+    .logo-link {
+        display: block;
+
+        width: 100%;
     }
 
     .logo {
-        width: 200px;
+        display: block;
 
-        max-height: 120px;
+        width: 100%;
+
+        max-width: 130px;
+
+        height: auto;
+
+        max-height: 100px;
+
+        margin: 0 auto;
+
+        object-fit: contain;
     }
 
     .logo-caption {
-        max-width: 280px;
+        max-width: 130px;
 
-        font-size: 12px;
+        margin: 4px auto 0;
+
+        font-size: 9px;
+
+        line-height: 1.2;
 
         text-align: center;
     }
 
 
     /* =====================================================
-       NAVIGATION
+       LANDING / NAVIGATION
     ===================================================== */
 
     .landing {
-        order: 2;
+        grid-column: 2;
+
+        position: relative;
+
+        top: 0;
 
         width: 100%;
 
@@ -564,24 +527,25 @@ footer {
 
         flex-wrap: wrap;
 
-        gap: 8px 12px;
+        gap: 5px 8px;
 
-        margin: 15px 0;
+        margin: 0;
+
+        padding: 0;
 
         text-align: center;
 
-        font-size: 15px;
-
-        /*
-           Reset desktop vertical movement on phone
-        */
-        top: 0;
+        font-size: 13px;
 
         white-space: normal;
     }
 
     .landing a {
-        font-size: 15px;
+        font-size: 13px;
+
+        font-weight: 600;
+
+        white-space: nowrap;
     }
 
 
@@ -590,17 +554,15 @@ footer {
     ===================================================== */
 
     .ceo {
-        order: 3;
+        grid-column: 3;
 
         width: 100%;
 
-        display: flex;
+        justify-self: center;
 
-        flex-direction: column;
+        align-self: center;
 
-        align-items: center;
-
-        justify-content: center;
+        display: block;
 
         margin: 0;
 
@@ -608,9 +570,25 @@ footer {
     }
 
     .profile-pic {
-        width: 80px;
+        width: 65px;
 
-        height: 80px;
+        height: 65px;
+
+        display: block;
+
+        margin: 0 auto;
+    }
+
+    .ceo figcaption {
+        margin-top: 4px;
+
+        font-size: 10px;
+
+        line-height: 1.2;
+    }
+
+    .ceo figcaption span {
+        white-space: normal;
     }
 
 
@@ -619,36 +597,47 @@ footer {
     ===================================================== */
 
     footer {
-        padding: 20px 5%;
+        width: 100%;
 
-        margin-top: 40px;
+        padding: 15px 3%;
+
+        margin-top: 30px;
+
+        box-sizing: border-box;
     }
 
     .footer-content {
+        display: grid;
+
         grid-template-columns: repeat(2, minmax(0, 1fr));
 
-        gap: 25px 15px;
+        gap: 15px 10px;
+
+        width: 100%;
 
         margin-left: 0;
 
         margin-right: 0;
 
-        padding: 20px 0;
+        padding: 15px 0;
     }
 
+    .footer-section {
+        padding: 12px;
 
-    /* =====================================================
-       FOOTER TEXT
-    ===================================================== */
+        border-radius: 20px;
+    }
 
     .footer-section h3 {
-        font-size: 17px;
+        font-size: 15px;
+
+        margin-bottom: 8px;
     }
 
     .footer-section p,
     .footer-section a,
     .footer-section li {
-        font-size: 14px;
+        font-size: 12px;
     }
 
 
@@ -660,6 +649,12 @@ footer {
         width: 100%;
 
         margin: 5px auto 0;
+
+        border: 0;
+
+        border-top: 1px solid #ccc;
+
+        transform: none;
     }
 
 
@@ -676,7 +671,9 @@ footer {
 
         align-items: center;
 
-        gap: 3px;
+        gap: 2px;
+
+        width: 100%;
 
         margin: 0 auto;
 
@@ -688,7 +685,7 @@ footer {
     .footer-bottom p {
         margin: 0;
 
-        font-size: 13px;
+        font-size: 11px;
     }
 
 
@@ -697,13 +694,17 @@ footer {
     ===================================================== */
 
     .social-links {
+        display: flex;
+
         justify-content: center;
 
-        gap: 12px;
+        align-items: center;
+
+        gap: 10px;
     }
 
     .social-links a {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 
@@ -714,39 +715,63 @@ footer {
 
 @media (max-width: 400px) {
 
+    .top-section {
+        grid-template-columns: 0.9fr 1.5fr 0.9fr;
+
+        gap: 3px;
+
+        padding: 8px 1%;
+    }
+
     .logo {
-        width: 175px;
+        max-width: 110px;
+
+        max-height: 85px;
+    }
+
+    .logo-caption {
+        max-width: 110px;
+
+        font-size: 8px;
     }
 
     .landing {
-        gap: 6px 9px;
+        gap: 4px 6px;
     }
 
     .landing a {
-        font-size: 14px;
+        font-size: 11px;
     }
 
     .profile-pic {
-        width: 70px;
+        width: 55px;
 
-        height: 70px;
+        height: 55px;
+    }
+
+    .ceo figcaption {
+        font-size: 9px;
     }
 
     .footer-content {
-        gap: 20px 10px;
+        gap: 12px 8px;
+    }
+
+    .footer-section {
+        padding: 10px;
     }
 
     .footer-section h3 {
-        font-size: 15px;
+        font-size: 14px;
     }
 
     .footer-section p,
     .footer-section a,
     .footer-section li {
-        font-size: 13px;
+        font-size: 11px;
     }
 
     .footer-bottom p {
-        font-size: 12px;
+        font-size: 10px;
     }
 }
